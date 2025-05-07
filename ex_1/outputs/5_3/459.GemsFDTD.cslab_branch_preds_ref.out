@@ -1,0 +1,11 @@
+Total Instructions: 1475067174328
+
+
+
+Branch Predictors: (Name - Correct - Incorrect)
+  Nbit-16K-1: 40846802155 887158648
+  Nbit-16K-2: 41281212199 452748604
+  Nbit-16K-3: 41284811965 449148838
+  Nbit-16K-4: 41284741731 449219072
+
+BTB Predictors: (Name - Correct - Incorrect - TargetCorrect)

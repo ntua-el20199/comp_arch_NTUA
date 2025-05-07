@@ -1,0 +1,15 @@
+Total Instructions: 142146407359
+
+RAS: (Correct - Incorrect)
+RAS (1 entries): 1535474422 885240034
+RAS (2 entries): 2018808342 401906114
+RAS (4 entries): 2325250890 95463566
+
+Branch Predictors: (Name - Correct - Incorrect)
+  FSM1_16K-2: 23547742605 2317116428
+  FSM2_16K-2: 23551305272 2313553761
+  FSM3_16K-2: 23558358325 2306500708
+  FSM4_16K-2: 23544487140 2320371893
+  FSM5_16K-2: 23440097295 2424761738
+
+BTB Predictors: (Name - Correct - Incorrect - TargetCorrect)

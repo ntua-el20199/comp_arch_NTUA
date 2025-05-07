@@ -1,0 +1,12 @@
+Total Instructions: 1042737240074
+
+Branch statistics:
+  Total-Branches: 73894102026
+  Conditional-Taken-Branches: 34756617371
+  Conditional-NotTaken-Branches: 32132851363
+  Unconditional-Branches: 5481923933
+  Calls: 761354687
+  Returns: 761354672
+
+# LaTeX formatted rows:
+73894102026 & 34756617371 & 32132851363 & 5481923933 & 761354687 & 761354672 & 
