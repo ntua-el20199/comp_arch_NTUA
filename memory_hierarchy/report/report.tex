@@ -15,6 +15,8 @@
 \usepackage{listings}
 \usepackage{xcolor}
 
+\usepackage{multirow} % Required for multirow cells
+
 \lstdefinestyle{cppstyle}{
     language=C++,
     basicstyle=\ttfamily\footnotesize,
@@ -61,5 +63,58 @@
 
     {\fontsize{15pt}{18pt}Απρίλιος 2025}
 \end{titlepage}
+
+\section{Εισαγωγή}
+Στην παρούσα εργασία θα μελετήσουμε διάφορες αρχιτεκτονικές μνήμης χρησιμοποιοώντας το εργαλείο προσομοίωσης PIN.
+
+\section{L2 Cache}
+Αρχικά, θα εξετάσουμε την επίδραση που έχουν στην επίδοση τα βασικά χαρακτηριστικά της L2, δηλαδή το μέγεθος, η συσχετιστικότητα (associativity) και το μέγεθος του cache block.
+
+Οι συνδυασμοί που θα δοκιμάσουμε είναι οι εξής:
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{L2 size (KB)} & \textbf{L2 associativity} & \textbf{L2 cache block size (B)} \\
+\hline
+256 & 4, 8 & \multirow{4}{*}{64, 128, 256} \\
+\cline{1-2}
+512 & 4, 8 & \\
+\cline{1-2}
+1024 & 8, 16 & \\
+\cline{1-2}
+2048 & 16 & \\
+\hline
+\end{tabular}
+\caption{L2 Cache Configuration}
+\label{tab:l2cache}
+\end{table}
+
+Σημειώνεται πως η πολιτική αντικατάστασης, σε όλες τις περιπτώσεις, είναι LRU (Least Recently Used).
+
+Για την προσομοίωση χρησιμοποιούμε 7 benchmarks από τη σουίτα `SPEC\_CPU2006`. 
+
+Για κάθε cache configuration θα χρησιμοποιοιήσουμε τον γεωμετρικό μέσο όρο των 7 benchmarks προκειμένου να εξάγουμε συπεράσματα.
+
+Οι μετρικές που θα χρησιμοποιήσουμε είναι οι εξής:
+\begin{itemize}
+    \item \textbf{Average Memory Access Time (AMAT)}: Ο μέσος χρόνος που απαιτείται για την πρόσβαση σε μια θέση μνήμης. Υπολογίζεται λαμβάνοντας υπόψη τον χρόνο επιτυχίας στην κρυφή μνήμη (hit time), το ποσοστό αστοχιών (miss rate) και την ποινή αστοχίας (miss penalty). Ένας χαμηλότερος AMAT υποδηλώνει καλύτερη απόδοση του συστήματος μνήμης.
+    \item \textbf{Instructions per cycle (IPC)}: Μέτρο της απόδοσης ενός επεξεργαστή, που δείχνει τον μέσο αριθμό εντολών που εκτελούνται σε κάθε κύκλο του ρολογιού του επεξεργαστή. Υψηλότερο IPC σημαίνει γενικά καλύτερη απόδοση.
+    \item \textbf{Misses per Kilo Instructions (MPKI)}: Ο αριθμός των αστοχιών της κρυφής μνήμης που συμβαίνουν για κάθε χίλιες εντολές που εκτελεί ο επεξεργαστής. Είναι ένας δείκτης της συχνότητας με την οποία η κρυφή μνήμη δεν παρέχει τα ζητούμενα δεδομένα, κανονικοποιημένος ως προς τον αριθμό των εκτελούμενων εντολών.
+\end{itemize}
+
+Συνολικά, ο αριθμός των κύκλων (Cycles) που απαιτούνται για την εκτέλεση ενός προγράμματος, λαμβάνοντας υπόψη την ιεραρχία της μνήμης, υπολογίζεται ως εξής:
+
+\[
+\text{Cycles} = \text{Instructions} + (\mathit{L1\_Accesses} \times \mathit{L1\_hit\_cycles}) + (\mathit{L2\_Accesses} \times \mathit{L2\_hit\_cycles}) + (\mathit{Mem\_Accesses} \times \mathit{Mem\_acc\_cycles})
+\]
+
+Για τους παραπάνω υπολογισμούς, οι τιμές κόστους σε κύκλους ρολογιού για κάθε τύπο πρόσβασης είναι οι ακόλουθες:
+\begin{itemize}
+\item Επιτυχία στην L1 κρυφή μνήμη (L1 hit): 1 κύκλος (\text{L1_hit_cycles} = 1)
+\item Επιτυχία στην L2 κρυφή μνήμη (L2 hit): 15 κύκλοι (\text{L2_hit_cycles} = 15)
+\item Πρόσβαση στην κύρια μνήμη (Main memory access): 250 κύκλοι (\text{Mem_acc_cycles} = 250)
+\end{itemize}
 
 \end{document}
