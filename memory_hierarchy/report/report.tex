@@ -1,0 +1,65 @@
+\documentclass{article}
+
+%change margins
+\usepackage[a4paper, left=2cm, right=2cm, top=2.5cm, bottom=2.5cm]{geometry}
+%placement accuracy
+\usepackage{float}
+% Needed for custom title page
+\usepackage{titling} 
+\usepackage{array}
+%for figures
+\usepackage{graphicx}
+\usepackage{subcaption}
+
+%for coding highlighting
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstdefinestyle{cppstyle}{
+    language=C++,
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{teal},
+    backgroundcolor=\color{white},
+    frame=single,
+    breaklines=true,
+    breakatwhitespace=false,
+    tabsize=4,
+    showstringspaces=false,
+    captionpos=b
+}
+%3 commands beloew needed for greek text
+\usepackage{fontspec} 
+\usepackage[greek,english]{babel}
+\setmainfont{Times New Roman}
+
+\title{\Huge Ιεραρχία Μνήμης}
+\author{
+  \textbf{Χαράλαμπος Παπαδόπουλος\\ 03120199} \\[3cm]
+  {Προηγμένα Θέματα Αρχιτεκτονικής Υπολογιστών\\ 2η Άσκηση} \\
+}
+\date{Μάιος 2025}
+
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace{3cm}
+
+    \includegraphics[width=4cm]{figures/emp.png}\\
+    \vspace{1.5cm}
+    {\fontsize{24pt}{20pt}\selectfont{Εθνικό Μετσόβιο Πολυτεχνείο}}\\[0.3cm]
+    {\fontsize{16pt}{18pt}\selectfont Σχολή Ηλεκτρολόγων Μηχανικών \& Μηχανικών Υπολογιστών}\\[0.3cm]
+    {\fontsize{16pt}{18pt}\selectfont Αρχιτεκτονική Υπολογιστών}\\[2cm]
+
+    {\Huge\bfseries \thetitle \par}
+    \vspace{2cm}
+    {\Large \theauthor \par}
+    \vfill
+
+    {\fontsize{15pt}{18pt}Απρίλιος 2025}
+\end{titlepage}
+
+\end{document}

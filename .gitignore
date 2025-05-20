@@ -1,9 +1,0 @@
-*pin-*
-.venv
-*.gz
-*.log
-*.aux
-*.fls
-*.fdb_latexmk
-plots.ipynb
-.gitignore
