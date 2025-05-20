@@ -42,7 +42,7 @@ KNOB<UINT32> KnobL2Associativity(KNOB_MODE_WRITEONCE, "pintool",
 /* Global Variables                                                      */
 /* ===================================================================== */
 
-typedef TWO_LEVEL_CACHE<CACHE_SET::LRU> CACHE_T; // This is where the replacement policy is chosen
+typedef TWO_LEVEL_CACHE<CACHE_SET::LFU> CACHE_T; // This is where the replacement policy is chosen
 CACHE_T *two_level_cache;
 
 UINT64 total_cycles, total_instructions;
