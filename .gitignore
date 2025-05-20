@@ -5,3 +5,5 @@
 *.aux
 *.fls
 *.fdb_latexmk
+plots.ipynb
+.gitignore
