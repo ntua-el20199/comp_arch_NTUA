@@ -1,0 +1,52 @@
+--------
+Total Statistics
+--------
+Total Instructions: 3184279483
+Total Cycles: 9135496079
+IPC: 0.348561
+
+--------
+Two level Cache hierarchy
+--------
+  L1-Data Cache:
+    Size(KB):          32
+    Block Size(B):     32
+    Associativity:      4
+
+  L2-Data Cache:
+    Size(KB):         512
+    Block Size(B):     64
+    Associativity:      4
+
+Latencies:    1   15  250
+L1-Sets:  256 - LRU - assoc:   4
+L2-Sets: 2048 - LRU - assoc:   4
+Store_allocation: Yes
+L2_inclusive: Yes
+
+L1 Cache Stats:
+L1-Load-Hits:         719576383   95.01%
+L1-Load-Misses:        37830738    4.99%
+L1-Load-Accesses:     757407121  100.00%
+
+L1-Store-Hits:         443317455   93.67%
+L1-Store-Misses:        29943950    6.33%
+L1-Store-Accesses:     473261405  100.00%
+
+L1-Total-Hits:        1162893838   94.49%
+L1-Total-Misses:        67774688    5.51%
+L1-Total-Accesses:    1230668526  100.00%
+
+L2 Cache Stats:
+L2-Load-Hits:          25140373   66.45%
+L2-Load-Misses:        12690365   33.55%
+L2-Load-Accesses:      37830738  100.00%
+
+L2-Store-Hits:          27818604   92.90%
+L2-Store-Misses:         2125346    7.10%
+L2-Store-Accesses:      29943950  100.00%
+
+L2-Total-Hits:          52958977   78.14%
+L2-Total-Misses:        14815711   21.86%
+L2-Total-Accesses:      67774688  100.00%
+
