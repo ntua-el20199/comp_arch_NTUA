@@ -70,6 +70,6 @@
  Ending timestepping loop
  No. of Allocations (         150 )/(         150 ) deallocations.  Ok 
 
-real	18m14,738s
-user	16m17,416s
-sys	0m1,431s
+real	229m36,346s
+user	207m45,736s
+sys	0m3,727s

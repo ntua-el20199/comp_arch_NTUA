@@ -2,8 +2,8 @@
 Total Statistics
 --------
 Total Instructions: 18199710897
-Total Cycles: 440460191196
-IPC: 0.0413198
+Total Cycles: 1932302150076
+IPC: 0.00941867
 
 --------
 Two level Cache hierarchy
@@ -12,41 +12,41 @@ Two level Cache hierarchy
     Size(KB):          32
     Block Size(B):     32
     Associativity:      4
-    Sets:             256 - LFU
 
   L2-Data Cache:
     Size(KB):        1024
     Block Size(B):    256
     Associativity:     16
-    Sets:             256 - LFU
 
 Latencies:    1   15  250
+L1-Sets:  256 - LFU - assoc:   4
+L2-Sets:  256 - LFU - assoc:  16
 Store_allocation: Yes
 L2_inclusive: Yes
 
 L1 Cache Stats:
-L1-Load-Hits:        3037840968  47.817554%
-L1-Load-Misses:      3315141774  52.182446%
-L1-Load-Accesses:    6352982742  100.000000%
+L1-Load-Hits:         263613220    4.15%
+L1-Load-Misses:      6089369522   95.85%
+L1-Load-Accesses:    6352982742  100.00%
 
-L1-Store-Hits:        1783361137  94.819378%
-L1-Store-Misses:        97437035  5.180622%
-L1-Store-Accesses:    1880798172  100.000000%
+L1-Store-Hits:         158236293    8.41%
+L1-Store-Misses:      1722561879   91.59%
+L1-Store-Accesses:    1880798172  100.00%
 
-L1-Total-Hits:        4821202105  58.553927%
-L1-Total-Misses:      3412578809  41.446073%
-L1-Total-Accesses:    8233780914  100.000000%
+L1-Total-Hits:         421849513    5.12%
+L1-Total-Misses:      7811931401   94.88%
+L1-Total-Accesses:    8233780914  100.00%
 
 L2 Cache Stats:
-L2-Load-Hits:        1883942183  56.828405%
-L2-Load-Misses:      1431199591  43.171595%
-L2-Load-Accesses:    3315141774  100.000000%
+L2-Load-Hits:         634266213   10.42%
+L2-Load-Misses:      5455103309   89.58%
+L2-Load-Accesses:    6089369522  100.00%
 
-L2-Store-Hits:          77284557  79.317435%
-L2-Store-Misses:        20152478  20.682565%
-L2-Store-Accesses:      97437035  100.000000%
+L2-Store-Hits:          22906439    1.33%
+L2-Store-Misses:      1699655440   98.67%
+L2-Store-Accesses:    1722561879  100.00%
 
-L2-Total-Hits:        1961226740  57.470519%
-L2-Total-Misses:      1451352069  42.529481%
-L2-Total-Accesses:    3412578809  100.000000%
+L2-Total-Hits:         657172652    8.41%
+L2-Total-Misses:      7154758749   91.59%
+L2-Total-Accesses:    7811931401  100.00%
 

@@ -1,3 +1,3 @@
 Pin: pin-3.31-98869-fa6f126a8
 Copyright 2002-2024 Intel Corporation.
-E:  [tid:22840] Missing application name
+E:  Unable to resolve tool path./home/harris/github_repos/comp_arch_NTUA/memory_hierarchy/advcomparch-ex2-helpcode/pintool/obj-intel64/simulator.so. Check tools path and tool extension.

@@ -139,21 +139,21 @@ $\mathit{CONFS} = \texttt{"256\_4\_64 256\_4\_128 256\_4\_256 256\_8\_64 256\_8\
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{figures/lru/amat.png}
+    \includegraphics[width=\textwidth]{figures/lru/amat_lru.png}
     \caption{L2 Cache Configuration Results}
     \label{fig:l2cache}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{figures/lru/ipc.png}
+    \includegraphics[width=\textwidth]{figures/lru/ipc_lru.png}
     \caption{L2 Cache Configuration Results}
     \label{fig:l2cache}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{figures/lru/mpki.png}
+    \includegraphics[width=\textwidth]{figures/lru/mpki_lru.png}
     \caption{L2 Cache Configuration Results}
     \label{fig:l2cache}
 \end{figure}
@@ -206,5 +206,107 @@ $\mathit{CONFS} = \texttt{"256\_4\_64 256\_4\_128 256\_4\_256 256\_8\_64 256\_8\
     \item \textbf{LRU Insertion Policy (LIP)}: Η πολιτική LIP αποτελεί παραλλαγή της LRU πολιτικής, με μοναδική διαφορά το χαρακτηρισμό των blocks που εισάγονται κάθε φορά στην cache. Συγκεκριμένα, κάθε block που εισάγεται στο set εξαιτίας κάποιου miss, χαρακτηρίζεται ως το LRU block του set (αντί για το MRU, όπως συμβαίνει στην κλασική LRU πολιτική).
     \item \textbf{Static Re-reference Prediction (SRRIP)}: Η πολιτική SRRIP προσπαθεί να αποτρέψει blocks που θα χρησιμοποιηθούν στο μακρινό μέλλον να καταλάβουν πολύτιμο χώρο στην cache. Για να το πετύχει αυτό, εκτιμά πότε θα χρησιμοποιηθεί ξανά κάθε block (θα έχουμε δηλαδή re-reference) και όταν χρειάζεται να αντικαταστήσει κάποιο, επιλέγει το block του set που έχει προβλεφθεί ότι θα χρησιμοποιηθεί στο πιο μακρινό μέλλον. Κάθε block έχει μήκος n bits, όπου n το associativity της cache.
 \end{itemize}
+
+Βρίσκουμε, λοιπόν, τα εξής αποτελέσματα:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/random/amat_random.png}
+    \caption{Random Replacement Policy Results}
+    \label{fig:random_amat}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/random/ipc_random.png}
+    \caption{Random Replacement Policy Results}
+    \label{fig:random_ipc}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/random/mpki_random.png}
+    \caption{Random Replacement Policy Results}
+    \label{fig:random_mpki}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/lfu/amat_lfu.png}
+    \caption{LFU Replacement Policy Results}
+    \label{fig:lfu_amat}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/lfu/ipc_lfu.png}
+    \caption{LFU Replacement Policy Results}
+    \label{fig:lfu_ipc}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/lfu/mpki_lfu.png}
+    \caption{LFU Replacement Policy Results}
+    \label{fig:lfu_mpki}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/lip/amat_lip.png}
+    \caption{LIP Replacement Policy Results}
+    \label{fig:lip_amat}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/lip/ipc_lip.png}
+    \caption{LIP Replacement Policy Results}
+    \label{fig:lip_ipc}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/lip/mpki_lip.png}
+    \caption{LIP Replacement Policy Results}
+    \label{fig:lip_mpki}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/srrip/amat_srrip.png}
+    \caption{SRRIP Replacement Policy Results}
+    \label{fig:srrip_amat}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/srrip/ipc_srrip.png}
+    \caption{SRRIP Replacement Policy Results}
+    \label{fig:srrip_ipc}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/srrip/mpki_srrip.png}
+    \caption{SRRIP Replacement Policy Results}
+    \label{fig:srrip_mpki}
+\end{figure}
+
+Συγκρίνοντας τις πέντε πολιτικές αντικατάστασης (LRU, Random, LFU, LIP, SRRIP) βάσει των παραπάνω αποτελεσμάτων:
+
+\begin{itemize}
+    \item Η πολιτική \textbf{LRU} επιδεικνύει την καλύτερη συνολική απόδοση για τις εξεταζόμενες διαμορφώσεις L2 cache. Για παράδειγμα, για την διαμόρφωση C4 (2048KB-16way-256B), η LRU πετυχαίνει IPC $\sim 0.225$, AMAT $\sim 8.2$ cycles και L2 MPKI $\sim 8.0$. Αυτές οι τιμές είναι ανώτερες από όλες τις άλλες πολιτικές που δοκιμάστηκαν.
+    \item Οι πολιτικές \textbf{Random} και \textbf{LIP} παρουσιάζουν την καλύτερη απόδοση μεταξύ των \textit{νέων} πολιτικών που υλοποιήθηκαν, με σχεδόν ταυτόσημες επιδόσεις μεταξύ τους. Για την C4, πετυχαίνουν IPC $\sim 0.205$, AMAT $\sim 9.2$ cycles και L2 MPKI $\sim 8.8$. Αν και καλές, υπολείπονται της LRU.
+    \item Η πολιτική \textbf{LFU} έχει σημαντικά χαμηλότερη απόδοση από τις LRU, Random και LIP. Οι τιμές IPC είναι πολύ χαμηλές (της τάξης του $\sim 0.09$), το AMAT είναι υψηλό (της τάξης των $\sim 14-15$ κύκλων) και το L2 MPKI επίσης υψηλό (της τάξης των $\sim 15$).
+    \item Η πολιτική \textbf{SRRIP}, όπως υλοποιήθηκε και δοκιμάστηκε βάσει των αποτελεσμάτων της αναφοράς, έδειξε την χειρότερη απόδοση με πολύ μεγάλη διαφορά. Οι τιμές IPC είναι εξαιρετικά χαμηλές ($\sim 0.03$), ενώ οι τιμές AMAT και L2 MPKI είναι πάρα πολύ υψηλές.
+\end{itemize}
+
+\textbf{Επιλογή Πολιτικής:}
+Με βάση τα αποτελέσματα των προσομοιώσεων, η πολιτική \textbf{LRU (Least Recently Used)} θα ήταν η βέλτιστη επιλογή για υλοποίηση στο σύστημα. 
+Παρέχει σταθερά την υψηλότερη απόδοση (υψηλότερο IPC, χαμηλότερο AMAT και L2 MPKI) σε σύγκριση με όλες τις άλλες πολιτικές.
+
+Εάν η LRU δεν ήταν διαθέσιμη για κάποιο λόγο (π.χ., λόγω πολυπλοκότητας υλοποίησης σε ορισμένα σενάρια), τότε η πολιτική Random θα ήταν η επόμενη καλύτερη επιλογή λόγω της καλής της απόδοσης σε σχέση με την απλότητά της. 
+Ωστόσο, εφόσον η LRU αξιολογήθηκε και αποδίδει καλύτερα, παραμένει η προτεινόμενη.
 
 \end{document}
